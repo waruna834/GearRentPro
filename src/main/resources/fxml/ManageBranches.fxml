@@ -18,11 +18,11 @@
     
     <!-- Action Buttons -->
     <HBox spacing="10" style="-fx-padding: 10;">
-        <Button onAction="#handleAddBranch" text="➕ Add New Branch" 
+        <Button onAction="#handleAddBranch" text="Add New Branch" 
                 style="-fx-padding: 10 25; -fx-font-size: 12; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand;"/>
-        <Button onAction="#handleUpdateBranch" text="✏️ Edit Selected" 
+        <Button onAction="#handleUpdateBranch" text="Edit Selected" 
                 style="-fx-padding: 10 25; -fx-font-size: 12; -fx-font-weight: bold; -fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;"/>
-        <Button onAction="#handleDeleteBranch" text="🗑️ Delete Selected" 
+        <Button onAction="#handleDeleteBranch" text="Delete Selected" 
                 style="-fx-padding: 10 25; -fx-font-size: 12; -fx-font-weight: bold; -fx-background-color: #dc3545; -fx-text-fill: white; -fx-cursor: hand;"/>
     </HBox>
     

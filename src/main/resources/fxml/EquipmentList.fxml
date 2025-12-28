@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.gearrentpro.controller.EquipmentListController"
+      spacing="10" style="-fx-padding: 15;">
+    
+    <Label text="Equipment Inventory" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+    
+    <!-- Filter & Search Bar -->
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Search by code, brand, or model..." HBox.hgrow="ALWAYS"/>
+        <Button onAction="#handleSearch" text="Search" style="-fx-padding: 8 20;"/>
+        <Label text="Status:"/>
+        <ComboBox fx:id="statusFilter" prefWidth="150"/>
+    </HBox>
+    
+    <!-- Equipment Table -->
+    <TableView fx:id="equipmentTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="codeColumn" text="Code" prefWidth="100"/>
+            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="100"/>
+            <TableColumn fx:id="brandColumn" text="Brand" prefWidth="100"/>
+            <TableColumn fx:id="modelColumn" text="Model" prefWidth="120"/>
+            <TableColumn fx:id="priceColumn" text="Daily Price" prefWidth="100"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

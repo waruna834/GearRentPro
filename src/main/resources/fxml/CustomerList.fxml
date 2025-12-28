@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.gearrentpro.controller.CustomerListController"
+      spacing="12"
+      style="-fx-padding: 15;">
+
+    <!-- Title -->
+    <Label text="Customer Management"
+           style="-fx-font-size: 18; -fx-font-weight: bold;" />
+
+    <!-- Search Bar -->
+    <HBox spacing="10">
+        <TextField fx:id="searchField"
+                   promptText="Search by name, code, or phone..."
+                   HBox.hgrow="ALWAYS"/>
+
+        <Button text="Search"
+                onAction="#handleSearch"/>
+    </HBox>
+
+    <!-- Customer Table -->
+    <TableView fx:id="customerTable"
+               VBox.vgrow="ALWAYS">
+
+        <columns>
+            <TableColumn fx:id="codeColumn"
+                         text="Code"
+                         prefWidth="100"/>
+
+            <TableColumn fx:id="nameColumn"
+                         text="Name"
+                         prefWidth="150"/>
+
+            <TableColumn fx:id="nicColumn"
+                         text="NIC / Passport"
+                         prefWidth="150"/>
+
+            <TableColumn fx:id="phoneColumn"
+                         text="Phone"
+                         prefWidth="120"/>
+
+            <TableColumn fx:id="membershipColumn"
+                         text="Membership"
+                         prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <!-- Action Buttons (Hidden for ADMIN) -->
+    <HBox fx:id="actionButtonsBox"
+          spacing="10"
+          alignment="CENTER_RIGHT">
+
+        <Button text="Add Customer"
+                onAction="#handleAddCustomer"
+                style="-fx-background-color: #28a745; -fx-text-fill: white;"/>
+
+        <Button text="Update Customer"
+                onAction="#handleUpdateCustomer"
+                style="-fx-background-color: #ffc107;"/>
+
+        <Button text="Delete Customer"
+                onAction="#handleDeleteCustomer"
+                style="-fx-background-color: #dc3545; -fx-text-fill: white;"/>
+    </HBox>
+
+</VBox>
