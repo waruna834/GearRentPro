@@ -1,0 +1,59 @@
+/* Root styling */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 12;
+}
+
+/* Button styling */
+.button {
+    -fx-font-size: 12;
+    -fx-padding: 8 15;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+/* TextField and PasswordField */
+.text-field, .password-field {
+    -fx-font-size: 12;
+    -fx-padding: 8;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-border-color: #ccc;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #007bff;
+    -fx-border-width: 2;
+}
+
+/* Table styling */
+.table-view {
+    -fx-font-size: 12;
+}
+
+.table-view .column-header {
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-padding: 8;
+    -fx-border-radius: 4;
+    -fx-border-color: #ccc;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #333;
+}
+
+/* Alert styling */
+.alert {
+    -fx-font-size: 12;
+}
