@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.gearrentpro.controller.ProcessReturnController"
+            fitToWidth="true" style="-fx-padding: 15;">
+    
+    <VBox spacing="15" style="-fx-padding: 15;">
+        
+        <Label text="Process Equipment Return" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        
+        <!-- Select Rental Section -->
+        <VBox spacing="10" style="-fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 15; -fx-background-color: #ecf0f1;">
+            
+            <Label text="Step 1: Select Rental to Return" style="-fx-font-size: 13; -fx-font-weight: bold;"/>
+            
+            <HBox spacing="15">
+                <Label text="Active Rental:" style="-fx-font-weight: bold; -fx-min-width: 100;"/>
+                <ComboBox fx:id="rentalCombo" prefWidth="400" HBox.hgrow="ALWAYS"
+                         style="-fx-font-size: 12; -fx-padding: 8;"/>
+            </HBox>
+        </VBox>
+        
+        <!-- Rental Details Display -->
+        <VBox spacing="10" style="-fx-border-color: #3498db; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 15; -fx-background-color: #ebf5fb;">
+            
+            <Label text="Rental Details" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-text-fill: #2980b9;"/>
+            
+            <Label fx:id="rentalDetailsLabel" text="No rental selected" 
+                   wrapText="true" style="-fx-font-size: 11; -fx-text-fill: #34495e;"/>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Return Information Section -->
+        <VBox spacing="12" style="-fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 15; -fx-background-color: #ecf0f1;">
+            
+            <Label text="Step 2: Enter Return Information" style="-fx-font-size: 13; -fx-font-weight: bold;"/>
+            
+            <GridPane hgap="15" vgap="12">
+                
+                <!-- Row 1: Return Date -->
+                <Label text="Actual Return Date:" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                       style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="returnDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                           style="-fx-font-size: 12; -fx-padding: 8;"/>
+                
+                <!-- Row 2: Damage Description -->
+                <Label text="Damage Description:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                       style="-fx-font-weight: bold; -fx-alignment: top;"/>
+                <TextArea fx:id="damageDescriptionArea" prefRowCount="4" wrapText="true"
+                         GridPane.columnIndex="1" GridPane.rowIndex="1"
+                         style="-fx-font-size: 11; -fx-padding: 8; -fx-control-inner-background: white;"/>
+                
+                <!-- Row 3: Damage Charge -->
+                <Label text="Damage Charge (LKR):" GridPane.columnIndex="0" GridPane.rowIndex="2"
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="damageChargeField" promptText="Enter amount (e.g., 5000)"
+                          GridPane.columnIndex="1" GridPane.rowIndex="2"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+            </GridPane>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Charges Summary Section -->
+        <VBox spacing="12" style="-fx-border-color: #f39c12; -fx-border-width: 2; -fx-border-radius: 5; -fx-padding: 15; -fx-background-color: #fef5e7;">
+            
+            <Label text="Charges Summary" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #d68910;"/>
+            
+            <HBox spacing="40" style="-fx-padding: 10;">
+                
+                <!-- Late Fee Box -->
+                <VBox spacing="5" style="-fx-padding: 10; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 3;">
+                    <Label text="Late Fee" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+                    <Label fx:id="lateFeeLabel" text="LKR 0.00" style="-fx-font-size: 16; -fx-text-fill: #e74c3c; -fx-font-weight: bold;"/>
+                </VBox>
+                
+                <!-- Total Charges Box -->
+                <VBox spacing="5" style="-fx-padding: 10; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 3;">
+                    <Label text="Total Charges" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+                    <Label fx:id="totalChargesLabel" text="LKR 0.00" style="-fx-font-size: 16; -fx-text-fill: #c0392b; -fx-font-weight: bold;"/>
+                </VBox>
+                
+                <!-- Refund Amount Box -->
+                <VBox spacing="5" style="-fx-padding: 10; -fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 3;">
+                    <Label text="Refund to Customer" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+                    <Label fx:id="refundLabel" text="LKR 0.00" style="-fx-font-size: 16; -fx-text-fill: #27ae60; -fx-font-weight: bold;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Action Buttons -->
+        <HBox spacing="15" style="-fx-padding: 10;">
+            <Button onAction="#handleProcessReturn" text="Process Return" 
+                    style="-fx-padding: 12 40; -fx-font-size: 13; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand;"/>
+            <Button onAction="#clearForm" text="Clear Form" 
+                    style="-fx-padding: 12 40; -fx-font-size: 13; -fx-font-weight: bold; -fx-background-color: #95a5a6; -fx-text-fill: white; -fx-cursor: hand;"/>
+        </HBox>
+        
+    </VBox>
+</ScrollPane>
