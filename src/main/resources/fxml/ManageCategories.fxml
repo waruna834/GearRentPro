@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.gearrentpro.controller.ManageCategoriesController"
+      spacing="10" style="-fx-padding: 15;">
+    
+    <Label text="Manage Equipment Categories" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+    <Label text="Configure equipment categories and pricing factors" style="-fx-font-size: 12; -fx-text-fill: #7f8c8d;"/>
+    
+    <!-- Action Buttons -->
+    <HBox spacing="10" style="-fx-padding: 10;">
+        <Button onAction="#handleAddCategory" text="➕ Add New Category" 
+                style="-fx-padding: 10 25; -fx-font-size: 12; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand;"/>
+        <Button onAction="#handleUpdateCategory" text="✏️ Edit Selected" 
+                style="-fx-padding: 10 25; -fx-font-size: 12; -fx-font-weight: bold; -fx-background-color: #3498db; -fx-text-fill: white; -fx-cursor: hand;"/>
+        <Button onAction="#handleDeleteCategory" text="🗑️ Delete Selected" 
+                style="-fx-padding: 10 25; -fx-font-size: 12; -fx-font-weight: bold; -fx-background-color: #dc3545; -fx-text-fill: white; -fx-cursor: hand;"/>
+    </HBox>
+    
+    <!-- Categories Table -->
+    <TableView fx:id="categoryTable" VBox.vgrow="ALWAYS" style="-fx-font-size: 12;">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Category Name" prefWidth="140"/>
+            <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="160"/>
+            <TableColumn fx:id="factorColumn" text="Base Price Factor" prefWidth="140"/>
+            <TableColumn fx:id="multiplierColumn" text="Weekend Multiplier" prefWidth="150"/>
+            <TableColumn fx:id="lateFeeColumn" text="Late Fee (Daily)" prefWidth="140"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+</VBox>

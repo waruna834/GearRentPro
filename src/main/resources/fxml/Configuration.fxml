@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.gearrentpro.controller.ConfigurationController"
+            fitToWidth="true" style="-fx-padding: 15;">
+    
+    <VBox spacing="15" style="-fx-padding: 15;">
+        
+        <Label text="System Configuration" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        
+        <Label text="Configure system-wide settings and parameters" style="-fx-font-size: 12; -fx-text-fill: #7f8c8d;"/>
+        
+        <Separator/>
+        
+        <!-- Rental Settings -->
+        <VBox spacing="12" style="-fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 15; -fx-background-color: #ecf0f1;">
+            
+            <Label text="Rental Settings" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <GridPane hgap="15" vgap="12">
+                <Label text="Max Rental Duration (days):" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="maxRentalDaysField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+                
+                <Label text="Long Rental Min Days:" GridPane.columnIndex="0" GridPane.rowIndex="1" 
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="longRentalMinDaysField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+                
+                <Label text="Long Rental Discount (%):" GridPane.columnIndex="0" GridPane.rowIndex="2" 
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="longRentalDiscountField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+            </GridPane>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Late Fee Settings -->
+        <VBox spacing="12" style="-fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 15; -fx-background-color: #ecf0f1;">
+            
+            <Label text="Late Fee Settings" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <GridPane hgap="15" vgap="12">
+                <Label text="Default Late Fee Per Day (LKR):" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="lateFeeDayField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+            </GridPane>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Deposit Settings -->
+        <VBox spacing="12" style="-fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 15; -fx-background-color: #ecf0f1;">
+            
+            <Label text="Deposit Settings" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <GridPane hgap="15" vgap="12">
+                <Label text="Customer Deposit Limit (LKR):" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="depositLimitField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+            </GridPane>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Membership Discount Settings -->
+        <VBox spacing="12" style="-fx-border-color: #bdc3c7; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 15; -fx-background-color: #ecf0f1;">
+            
+            <Label text="Membership Discount Settings" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            
+            <GridPane hgap="15" vgap="12">
+                <Label text="Regular Member Discount (%):" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="regularDiscountField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+                
+                <Label text="Silver Member Discount (%):" GridPane.columnIndex="0" GridPane.rowIndex="1" 
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="silverDiscountField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+                
+                <Label text="Gold Member Discount (%):" GridPane.columnIndex="0" GridPane.rowIndex="2" 
+                       style="-fx-font-weight: bold;"/>
+                <TextField fx:id="goldDiscountField" prefWidth="250" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                          style="-fx-font-size: 12; -fx-padding: 8;"/>
+            </GridPane>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Action Buttons -->
+        <HBox spacing="15" style="-fx-padding: 10;">
+            <Button onAction="#handleSaveSettings" text="Save Settings" 
+                    style="-fx-padding: 10 30; -fx-font-size: 12; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-cursor: hand;"/>
+            <Button onAction="#handleResetDefaults" text="Reset to Defaults" 
+                    style="-fx-padding: 10 30; -fx-font-size: 12; -fx-font-weight: bold; -fx-background-color: #95a5a6; -fx-text-fill: white; -fx-cursor: hand;"/>
+        </HBox>
+        
+    </VBox>
+</ScrollPane>
