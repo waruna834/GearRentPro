@@ -1,0 +1,3 @@
+db.url=jdbc:mysql://localhost:3306/gearrent_pro
+db.user=<your username>
+db.password=<your password>>
