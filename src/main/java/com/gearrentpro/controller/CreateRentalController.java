@@ -216,7 +216,8 @@ public class CreateRentalController {
             int reservationId = reservationDAO.createReservation(reservation);
             if (reservationId > 0) {
                 showAlert(Alert.AlertType.INFORMATION, "Success",
-                        "Reservation created successfully!\n\n" +
+                        "Reservation created successfully!\n" +
+                        "For covert this to a rental or cancel, go to the reservations\n\n" +
                         "Reservation Code: " + reservation.getReservationCode() + "\n" +
                         "Customer: " + customer.getCustomerName() + "\n" +
                         "Equipment: " + equipment.getBrand() + " " + equipment.getModel() + "\n" +
